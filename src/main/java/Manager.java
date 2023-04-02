@@ -20,19 +20,11 @@ public class Manager {
         items = tpm;
     }
 
-    public PosterItem[] getItems() {
+    public PosterItem[] findAll() {
         return items;
     }
 
-    public void findAll() {
-        PosterItem[] tpm = new PosterItem[items.length];
-        for (int i = 0; i < items.length; i++) {
-            tpm[i] = items[i];
-        }
-        items = tpm;
-    }
-
-    public void findLast() {
+    public PosterItem[] findLast() {
         int resultLength = 0;
         if (limLastAddFilms > items.length) {
             resultLength = items.length;
@@ -43,6 +35,6 @@ public class Manager {
         for (int i = 0; i < resultLength; i++) {
             last[i] = items[items.length - 1 - i];
         }
-        items = last;
+        return last;
     }
 }
