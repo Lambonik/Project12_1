@@ -17,7 +17,7 @@ public class ManagerTest {
         manager.addItem(item);
 
         PosterItem[] expected = {item};
-        PosterItem[] actual = manager.getItems();
+        PosterItem[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -33,7 +33,7 @@ public class ManagerTest {
         manager.findAll();
 
         PosterItem[] expected = {item, item1, item2, item3, item4, item5};
-        PosterItem[] actual = manager.getItems();
+        PosterItem[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -43,7 +43,7 @@ public class ManagerTest {
         manager.findAll();
 
         PosterItem[] expected = {};
-        PosterItem[] actual = manager.getItems();
+        PosterItem[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -56,10 +56,9 @@ public class ManagerTest {
         manager.addItem(item3);
         manager.addItem(item4);
         manager.addItem(item5);
-        manager.findLast();
 
         PosterItem[] expected = {item5, item4, item3, item2, item1};
-        PosterItem[] actual = manager.getItems();
+        PosterItem[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -73,10 +72,9 @@ public class ManagerTest {
         manager.addItem(item4);
         manager.addItem(item5);
         manager.addItem(item6);
-        manager.findLast();
 
         PosterItem[] expected = {item6, item5, item4, item3, item2, item1, item};
-        PosterItem[] actual = manager.getItems();
+        PosterItem[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -89,10 +87,9 @@ public class ManagerTest {
         manager.addItem(item3);
         manager.addItem(item4);
         manager.addItem(item5);
-        manager.findLast();
 
         PosterItem[] expected = {item5, item4, item3, item2, item1, item};
-        PosterItem[] actual = manager.getItems();
+        PosterItem[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -105,10 +102,9 @@ public class ManagerTest {
         manager.addItem(item3);
         manager.addItem(item4);
         manager.addItem(item5);
-        manager.findLast();
 
         PosterItem[] expected = {};
-        PosterItem[] actual = manager.getItems();
+        PosterItem[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 }
