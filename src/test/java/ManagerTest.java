@@ -107,5 +107,20 @@ public class ManagerTest {
         PosterItem[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
+    
+    @Test
+    public void UserLimReversOutLessPosterLength() {
+        Manager manager = new Manager(4);
+        manager.addItem(item);
+        manager.addItem(item1);
+        manager.addItem(item2);
+        manager.addItem(item3);
+        manager.addItem(item4);
+        manager.addItem(item5);
+
+        PosterItem[] expected = {item5, item4, item3, item2};
+        PosterItem[] actual = manager.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
 
